@@ -31,7 +31,7 @@ export class LoginComponent {
 		if (this.loginForm.invalid) {
 			return;
 		}
-		this.appService.authorize(this.loginForm.value);
+		console.log(this.appService.authorize(this.loginForm.value));
 		this.submitted = false;
 		this.loginForm.reset();
 	}

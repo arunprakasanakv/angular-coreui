@@ -11,10 +11,11 @@ export class AppService {
   constructor(private http:HttpClient, private router:Router) { }
 
   authorize(data:any):any{
-    console.log(data);
+    // console.log(data);
     // this.http.post("http://10.10.1.151:3000/users/add",data)
     // .subscribe((response) =>{
     //     return response;
     // });
+    return data;
   }
 }
