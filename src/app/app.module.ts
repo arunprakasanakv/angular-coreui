@@ -36,6 +36,8 @@ import {
 // Import routing module
 import { AppRoutingModule } from './app.routes';
 import { AppService } from './app.service';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
 
 // Import 3rd party components
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -66,10 +68,14 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     LoginComponent,
     RegisterComponent
   ],
-  providers: [{
-  	provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+  providers: [
+    AuthService,
+    AuthGuard,
+    {
+  	  provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

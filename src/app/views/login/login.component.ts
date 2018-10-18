@@ -37,7 +37,6 @@ export class LoginComponent {
 		this.appService.authorize(this.loginForm.value).subscribe((response) =>{
 			localStorage.setItem('userName',response.data.userName);
 			this.router.navigate(['/dashboard']);
-			return response;
 		});
 		this.submitted = false;
 		this.loginForm.reset();

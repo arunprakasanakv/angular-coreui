@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
 
+import { AuthGuard } from './auth/auth.guard';
+import { AuthService } from './auth/auth.service';
+
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
@@ -31,7 +34,8 @@ export const routes: Routes = [
     component: DefaultLayoutComponent,
     data: {
       title: 'Home'
-    }
+    },
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
