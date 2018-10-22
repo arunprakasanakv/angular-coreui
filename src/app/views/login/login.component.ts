@@ -20,6 +20,10 @@ export class LoginComponent {
 	) { }
 
 	ngOnInit(){
+		if(localStorage.getItem('userName') != ''){
+			this.router.navigate(['/dashboard']);
+		}
+
 		this.loginForm = this.formBuilder.group({
 			emailid: ['', [Validators.required,Validators.email]],
 			password: ['', Validators.required]
